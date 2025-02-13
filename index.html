@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day! ❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        #hidden-menu {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Valentine's Day! ❤️</h1>
+    <p>Hope you're having a lovely day! Nothing to see here... or is there? 👀</p>
+    
+    <!-- Hidden menu JSON inside a comment -->
+    <!-- {"title": "💕 Valentine's Menu 💕", "starter": "🥖 Burrata Bruschetta", "main": "🍗 Chicken with Butter Beans", "drink": "🍸 Cranberry Gin & Tonic", "dessert": "🍫 Chocolate Cake"} -->
+    
+    <!-- Hidden JSON in an element -->
+    <p id="valentines-message" data-menu='{"title": "💕 Valentine\'s Menu 💕", "starter": "🥖 Burrata Bruschetta", "main": "🍗 Chicken with Butter Beans", "drink": "🍸 Cranberry Gin & Tonic", "dessert": "🍫 Chocolate Cake"}'>
+        Nothing suspicious here... 😉
+    </p>
+    
+    <!-- Another hidden JSON inside a hidden element -->
+    <pre id="hidden-menu" style="display: none;">
+        {"title": "💕 Valentine's Menu 💕", "starter": "🥖 Burrata Bruschetta", "main": "🍗 Chicken with Butter Beans", "drink": "🍸 Cranberry Gin & Tonic", "dessert": "🍫 Chocolate Cake"}
+    </pre>
+    
+    <script>
+        console.log("Surprise! 🎉 Here's your Valentine's menu:");
+        console.log(JSON.parse(document.getElementById("valentines-message").getAttribute("data-menu")));
+    </script>
+</body>
+</html>
